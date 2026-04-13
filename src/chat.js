@@ -5,7 +5,7 @@ import { ref, push, onValue } from 'firebase/database'
 const currentUser = JSON.parse(localStorage.getItem('chatUser'))
 
 if (!currentUser) {
-  window.location.href = './index.html'
+  window.location.href = '${import.meta.env.BASE_URL}index.html'
 }
 
 document.querySelector('#app').innerHTML = `
@@ -58,7 +58,7 @@ async function sendMessage() {
 
 function logoutUser() {
   localStorage.removeItem('chatUser')
-  window.location.href = './index.html'
+  window.location.href = `${import.meta.env.BASE_URL}index.html`
 }
 
 onValue(messagesRef, (snapshot) => {
