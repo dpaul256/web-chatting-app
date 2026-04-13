@@ -58,7 +58,7 @@ async function sendMessage() {
 
 function logoutUser() {
   localStorage.removeItem('chatUser')
-  window.location.href = '/'
+  window.location.href = '../'
 }
 
 onValue(messagesRef, (snapshot) => {
