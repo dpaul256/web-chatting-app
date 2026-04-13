@@ -11,4 +11,4 @@ Here is the link : https://dpaul256.github.io/web-chatting-app/
 
 ---- 
 version1.0 public chat app
-version1.1 adding loging system
+version1.2 adding loging system
