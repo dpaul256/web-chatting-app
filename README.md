@@ -12,3 +12,4 @@ Here is the link for the website : https://dpaul256.github.io/web-chatting-app/
 ----  
 version1.0 public chat app  
 version1.6 adding loging system  
+version1.7 adding blog system 
