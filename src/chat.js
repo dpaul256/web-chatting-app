@@ -1,4 +1,5 @@
-import './style.css'
+import './css/base.css'
+import './css/chat.css'
 import { db } from './firebase'
 import { ref, push, onValue } from 'firebase/database'
 
@@ -11,11 +12,18 @@ if (!currentUser) {
 document.querySelector('#app').innerHTML = `
   <main class="wrap">
     <div class="top-bar">
-      <h1>Public Chat</h1>
-      <button id="logoutBtn" class="logout-btn">Logout</button>
-    </div>
+      <div class="title-row">
+        <h1>Public Chat /</h1>
+        <span class="current-user-name">
+          ${escapeHtml(currentUser.username)}
+        </span>
+      </div>
 
-    <p id="currentUserText">User: ${escapeHtml(currentUser.username)}</p>
+      <div class="action-buttons">
+        <button id="myBlogBtn" class="blog-btn">Blog</button>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+    </div>
 
     <div class="form">
       <input id="messageInput" type="text" placeholder="Type a message..." maxlength="200" />
@@ -30,11 +38,15 @@ const messageInput = document.querySelector('#messageInput')
 const sendBtn = document.querySelector('#sendBtn')
 const logoutBtn = document.querySelector('#logoutBtn')
 const messagesDiv = document.querySelector('#messages')
+const myBlogBtn = document.getElementById('myBlogBtn')
 
 const messagesRef = ref(db, 'messages')
 
 sendBtn.addEventListener('click', sendMessage)
 logoutBtn.addEventListener('click', logoutUser)
+myBlogBtn.addEventListener('click', () => {
+  window.location.href = `./blog.html?user=${encodeURIComponent(currentUser.username)}`
+})
 
 messageInput.addEventListener('keydown', async (e) => {
   if (e.key === 'Enter') {
@@ -78,7 +90,15 @@ onValue(messagesRef, (snapshot) => {
     const time = new Date(msg.createdAt).toLocaleString()
 
     item.innerHTML = `
-      <div class="meta">${escapeHtml(msg.username)} • ${time}</div>
+      <div class="meta">
+        <a 
+          class="user-link"
+          href="./blog.html?user=${encodeURIComponent(msg.username)}"
+        >
+          ${escapeHtml(msg.username)}
+        </a>
+        • ${time}
+      </div>
       <div>${escapeHtml(msg.text)}</div>
     `
 

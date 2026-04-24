@@ -108,21 +108,49 @@ button:active {
   margin-bottom: 24px;
 }
 
-#statusText,
-#currentUserText {
+#statusText {
   margin-bottom: 16px;
   color: #a06a58;
   font-weight: 500;
 }
 
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+.current-user-name {
+  font-size: 28px;      
+  font-weight: 700;
+  color: #b86b52;       
+  line-height: 1;
 }
 
-.logout-btn {
+
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.title-row h1 {
+  margin: 0;
+  
+}
+
+.user-link {
+  font-size: 16px;
+  color: #5a2ca0;
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logout-btn,
+.blog-btn {
   padding: 10px 16px;
   font-size: 15px;
   border: none;
@@ -133,8 +161,62 @@ button:active {
   font-weight: 600;
 }
 
-.logout-btn:hover {
+.logout-btn:hover,
+.blog-btn:hover {
   background: #ffc2aa;
-} 
+}
 
-/*body { margin: 0; font-family: Arial, sans-serif; background: #111; color: white; } * { box-sizing: border-box; } .wrap { max-width: 800px; margin: 40px auto; padding: 20px; } h1 { margin-bottom: 20px; } .form { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; } input { flex: 1; min-width: 180px; padding: 10px; font-size: 16px; border: none; border-radius: 8px; } button { padding: 10px 16px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; } .messages { display: grid; gap: 12px; } .message { background: #1d1d1d; padding: 12px; border-radius: 10px; } .meta { font-size: 12px; opacity: 0.7; margin-bottom: 6px; } .auth-box, .chat-box { margin-bottom: 24px; } h2 { margin-bottom: 12px; font-size: 20px; } #statusText, #currentUserText { margin-bottom: 16px; } .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; } .logout-btn { padding: 10px 16px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; }*/
+.logout-btn:active,
+.blog-btn:active {
+  background: #ffb38f;
+}
+
+.title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chat-container {
+  width: 100%;
+  padding: 16px;
+}
+
+.chat-container {
+  width: 100%;
+  padding: 16px;
+}
+
+.chat-card {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 24px;
+  background: rgba(255, 250, 246, 0.92);
+  border: 1px solid #f3d8c7;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(160, 110, 80, 0.12);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  background: #ffd4c2;
+  color: #9b5f4c;
+  box-shadow: 0 2px 6px rgba(180, 120, 90, 0.08);
+  transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+}

@@ -1,0 +1,50 @@
+.chat-card {
+  max-width: 1020px;
+  margin: 40px auto;
+  padding: 24px;
+  background: rgba(255, 250, 246, 0.92);
+  border: 1px solid #f3d8c7;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(160, 110, 80, 0.12);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  background: #ffd4c2;
+  color: #9b5f4c;
+  box-shadow: 0 2px 6px rgba(180, 120, 90, 0.08);
+  transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+}
+
+#blogTitle {
+  margin: 0;
+}

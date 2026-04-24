@@ -1,0 +1,115 @@
+.wrap {
+  max-width: 820px;
+  margin: 40px auto;
+  padding: 24px;
+  background: rgba(255, 250, 246, 0.92);
+  border: 1px solid #f3d8c7;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(160, 110, 80, 0.12);
+}
+
+.messages {
+  display: grid;
+  gap: 12px;
+}
+
+.message {
+  background: #fff4ed;
+  border: 1px solid #f5d3c2;
+  padding: 14px;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(180, 120, 90, 0.08);
+}
+
+.current-user-name {
+  font-size: 28px;      
+  font-weight: 700;
+  color: #b86b52;       
+  line-height: 1;
+}
+
+.meta {
+  font-size: 12px;
+  color: #b18472;
+  margin-bottom: 6px;
+}
+
+.auth-box,
+.chat-box {
+  margin-bottom: 24px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.title-row h1 {
+  margin: 0;
+}
+
+.form {
+  display: grid;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.user-link {
+  font-size: 16px;
+  color: #5a2ca0;
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logout-btn,
+.blog-btn {
+  padding: 10px 16px;
+  font-size: 15px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  background: #ffd4c2;
+  color: #9b5f4c;
+  font-weight: 600;
+}
+
+.logout-btn:hover,
+.blog-btn:hover {
+  background: #ffc2aa;
+}
+
+.logout-btn:active,
+.blog-btn:active {
+  background: #ffb38f;
+}
+
+.title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chat-container {
+  width: 100%;
+  padding: 16px;
+}

@@ -1,4 +1,4 @@
-import './style.css'
+import './css/style.css'
 import { db } from './firebase'
 import { ref, push, get, query, orderByChild, equalTo } from 'firebase/database'
 
