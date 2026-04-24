@@ -45,7 +45,7 @@ const messagesRef = ref(db, 'messages')
 sendBtn.addEventListener('click', sendMessage)
 logoutBtn.addEventListener('click', logoutUser)
 myBlogBtn.addEventListener('click', () => {
-  window.location.href = `./blog.html?user=${encodeURIComponent(currentUser.username)}`
+  window.location.href = `${import.meta.env.BASE_URL}blog.html?user=${encodeURIComponent(currentUser.username)}`
 })
 
 messageInput.addEventListener('keydown', async (e) => {
@@ -93,7 +93,7 @@ onValue(messagesRef, (snapshot) => {
       <div class="meta">
         <a 
           class="user-link"
-          href="./blog.html?user=${encodeURIComponent(msg.username)}"
+          href="${import.meta.env.BASE_URL}blog.html?user=${encodeURIComponent(msg.username)}"
         >
           ${escapeHtml(msg.username)}
         </a>

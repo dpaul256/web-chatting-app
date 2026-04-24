@@ -18,7 +18,7 @@ document.querySelector('#app').innerHTML = `<div class="chat-container">
         </div>
 
         <div class="actions">
-          <a href="./chat.html" class="top-btn">Chat</a>
+          <a href="${import.meta.env.BASE_URL}chat.html" class="top-btn">Chat</a>
           <button id="editToggleBtn" class="top-btn" style="display:none;">Edit Blog</button>
         </div>
       </div>
