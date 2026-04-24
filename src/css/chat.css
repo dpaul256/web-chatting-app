@@ -60,10 +60,20 @@
 }
 
 .form {
+  position: sticky;
+  bottom: 20px;
+  z-index: 10;
+
+  max-width: 820px;
+  margin: 20px auto;
   display: grid;
   gap: 30px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+  grid-template-columns: 1fr auto;
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(255, 250, 246, 0.92);
+  border: 1px solid #f3d8c7;
+  margin-top: 20px;
 }
 
 .user-link {

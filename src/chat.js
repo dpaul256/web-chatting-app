@@ -23,15 +23,14 @@ document.querySelector('#app').innerHTML = `
         <button id="myBlogBtn" class="blog-btn">Blog</button>
         <button id="logoutBtn" class="logout-btn">Logout</button>
       </div>
-    </div>
-
-    <div class="form">
-      <input id="messageInput" type="text" placeholder="Type a message..." maxlength="200" />
-      <button id="sendBtn">Send</button>
-    </div>
-
+    </div>  
     <div id="messages" class="messages"></div>
+    
   </main>
+  <div class="form">
+    <input id="messageInput" type="text" placeholder="Type a message..." maxlength="200" />
+    <button id="sendBtn">Send</button>
+  </div>
 `
 
 const messageInput = document.querySelector('#messageInput')
