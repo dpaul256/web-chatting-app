@@ -6,7 +6,7 @@ import { ref, push, onValue } from 'firebase/database'
 const currentUser = JSON.parse(localStorage.getItem('chatUser'))
 
 if (!currentUser) {
-  window.location.href = '${import.meta.env.BASE_URL}index.html'
+  window.location.href = `${import.meta.env.BASE_URL}index.html`
 }
 
 document.querySelector('#app').innerHTML = `

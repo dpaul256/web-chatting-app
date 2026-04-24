@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { buildErrorMessage, defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         chat: resolve(__dirname, 'chat.html'),
+        blog: resolve(__dirname, 'blog.html'),
       },
     },
   },
