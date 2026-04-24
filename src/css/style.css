@@ -122,7 +122,6 @@ button:active {
 }
 
 
-
 .title-row {
   display: flex;
   align-items: center;
@@ -132,7 +131,6 @@ button:active {
 
 .title-row h1 {
   margin: 0;
-  
 }
 
 .user-link {

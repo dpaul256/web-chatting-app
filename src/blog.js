@@ -10,25 +10,6 @@ import {
   onValue
 } from 'firebase/database';
 
-const currentUser = JSON.parse(localStorage.getItem("chatUser"));
-const params = new URLSearchParams(window.location.search);
-const blogUser = params.get("user");
-
-const blogTitle = document.getElementById("blogTitle");
-const profileName = document.getElementById("profileName");
-const profileBio = document.getElementById("profileBio");
-
-const editorSection = document.getElementById("editorSection");
-const editToggleBtn = document.getElementById("editToggleBtn");
-
-const bioInput = document.getElementById("bioInput");
-const postTitleInput = document.getElementById("postTitleInput");
-const postContentInput = document.getElementById("postContentInput");
-const saveBioBtn = document.getElementById("saveBioBtn");
-const publishPostBtn = document.getElementById("publishPostBtn");
-
-const postsList = document.getElementById("postsList");
-
 document.querySelector('#app').innerHTML = `<div class="chat-container">
     <div class="chat-card">
       <div class="top-bar">
@@ -43,15 +24,12 @@ document.querySelector('#app').innerHTML = `<div class="chat-container">
       </div>
 
       <div class="blog-profile-card">
-        <h2 id="profileName">User</h2>
-        <p id="profileBio">No bio yet.</p>
+        <h2 id="profileName"></h2>
       </div> 
 
       <div id="editorSection" class="blog-editor" style="display:none;">
-        <input id="bioInput" type="text" placeholder="Write your bio..." />
         <input id="postTitleInput" type="text" placeholder="Post title..." />
         <textarea id="postContentInput" placeholder="Write your article..."></textarea>
-        <button id="saveBioBtn" class="send-btn">Save Bio</button>
         <button id="publishPostBtn" class="send-btn">Publish Post</button>
       </div>
 
@@ -59,6 +37,22 @@ document.querySelector('#app').innerHTML = `<div class="chat-container">
     </div>
   </div>
 `
+
+const currentUser = JSON.parse(localStorage.getItem("chatUser"));
+const params = new URLSearchParams(window.location.search);
+const blogUser = params.get("user");
+
+const blogTitle = document.getElementById("blogTitle");
+
+const editorSection = document.getElementById("editorSection");
+const editToggleBtn = document.getElementById("editToggleBtn");
+
+const bioInput = document.getElementById("bioInput");
+const postTitleInput = document.getElementById("postTitleInput");
+const postContentInput = document.getElementById("postContentInput");
+const publishPostBtn = document.getElementById("publishPostBtn");
+
+const postsList = document.getElementById("postsList");
 
 function escapeHtml(str = "") {
   return str
@@ -81,6 +75,9 @@ if (!blogUser) {
 
 const isOwner = currentUser && currentUser.username === blogUser;
 
+console.log(currentUser);
+console.log(currentUser?.username);
+
 blogTitle.textContent = `${blogUser}'s Blog`;
 
 if (isOwner) {
@@ -89,35 +86,7 @@ if (isOwner) {
 
 editToggleBtn.addEventListener("click", () => {
   editorSection.style.display =
-    editorSection.style.display === "none" ? "block" : "none";
-});
-
-async function loadProfile() {
-  const userRef = ref(db, `users/${blogUser}`);
-  const snapshot = await get(userRef);
-
-  if (snapshot.exists()) {
-    const userData = snapshot.val();
-    profileName.textContent = userData.username || blogUser;
-    profileBio.textContent = userData.bio || "No bio yet.";
-
-    if (isOwner) {
-      bioInput.value = userData.bio || "";
-    }
-  } else {
-    profileName.textContent = blogUser;
-    profileBio.textContent = "No bio yet.";
-  }
-}
-
-saveBioBtn.addEventListener("click", async () => {
-  if (!isOwner) return;
-
-  const newBio = bioInput.value.trim();
-
-  await set(ref(db, `users/${blogUser}/bio`), newBio);
-  profileBio.textContent = newBio || "No bio yet.";
-  alert("Bio saved.");
+    editorSection.style.display === "none" ? "grid" : "none";
 });
 
 publishPostBtn.addEventListener("click", async () => {
@@ -174,5 +143,4 @@ function listenPosts() {
   });
 }
 
-loadProfile();
 listenPosts();
