@@ -136,7 +136,6 @@ button:active {
 .user-link {
   font-size: 16px;
   color: #5a2ca0;
-  text-decoration: underline;
   display: inline-flex;
   align-items: center;
 }

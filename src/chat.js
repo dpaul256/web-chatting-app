@@ -10,20 +10,21 @@ if (!currentUser) {
 }
 
 document.querySelector('#app').innerHTML = `
-  <main class="wrap">
-    <div class="top-bar">
-      <div class="title-row">
-        <h1>Public Chat /</h1>
-        <span class="current-user-name">
-          ${escapeHtml(currentUser.username)}
-        </span>
-      </div>
+  <div class="top-bar">
+    <div class="title-row">
+      <h1>Public Chat /</h1>
+      <span class="current-user-name">
+        ${escapeHtml(currentUser.username)}
+      </span>
+    </div>
 
-      <div class="action-buttons">
-        <button id="myBlogBtn" class="blog-btn">Blog</button>
-        <button id="logoutBtn" class="logout-btn">Logout</button>
-      </div>
-    </div>  
+    <div class="action-buttons">
+      <button id="myBlogBtn" class="blog-btn">Blog</button>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+  </div> 
+  <main class="wrap">
+     
     <div id="messages" class="messages"></div>
     
   </main>
